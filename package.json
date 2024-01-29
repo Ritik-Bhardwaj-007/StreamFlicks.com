@@ -1,0 +1,11 @@
+{
+  "name": "streamflicks.com",
+  "version": "1.0.0",
+  "description": "This will contain the backend for the streaming site named StreamFlicks.com ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ritik Bhardwaj",
+  "license": "ISC"
+}
