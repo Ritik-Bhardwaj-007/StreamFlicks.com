@@ -1,5 +1,5 @@
 import {v2 as cloudinary } from "cloudinary"
-import fs from "fs"
+import fs, { fchmod } from "fs"
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -14,7 +14,8 @@ const uploadOnCloudinary= async (localFilePath)=>{
             {
                 resource_type:"auto",
             });
-            console.log("Image uploaded to Cloudinary!",response.url);
+            // console.log("Image uploaded to Cloudinary!",response.url);
+            fs.unlinkSync(localFilePath);//delete the local file after it has been uploaded
             return response;
         } catch (error) {
         fs.unlinkSync(localFilePath);
